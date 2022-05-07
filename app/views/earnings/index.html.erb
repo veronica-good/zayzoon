@@ -1,0 +1,31 @@
+<h1>Import CSV file</h1>
+
+<%= flash[:notice] %>
+
+<div>
+  <%= form_tag import_earnings_path,  multipart: true do %>
+    <%= file_field_tag :file, :required => true %>
+    <%= submit_tag "Import CSV" %>
+  <% end %>
+</div>
+
+<% if !@earnings.empty? %>
+  <div>
+    <table>
+      <thead>
+        <th> Employee Id </th>
+        <th> Earning Date </th>
+        <th> Amount </th>
+      </thead>
+      <tbody>
+        <% @earnings.each do |e| %>
+          <tr>
+            <td><%= e.employee_id %></td>
+            <td><%= e.earning_date %></td>
+            <td><%= e.amount %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+<% end %>
