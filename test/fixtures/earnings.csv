@@ -1,0 +1,4 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+emp,date,amount
+123,2021-12-14,800.50
+456,2021-12-21,740.00

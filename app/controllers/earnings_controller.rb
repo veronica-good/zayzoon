@@ -5,7 +5,7 @@ class EarningsController < ApplicationController
   end
 
   def import
-    Earning.import(params[:file])
+    puts Earning.import(params[:file])
     redirect_to root_url, notice: "Data Imported"
   end
 
