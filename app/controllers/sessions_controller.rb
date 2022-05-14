@@ -8,7 +8,6 @@ class SessionsController < ApplicationController
   end
 
   def create
-    
     @employer = Employer.find_by_name params[:name]
     if @employer && @employer.authenticate(params[:password])
       session[:employer_id] = @employer.id
