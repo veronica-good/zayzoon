@@ -12,12 +12,12 @@ Employer.delete_all
 
 employer1 = Employer.create(
   name: "AcmeCo",
-  password: "supersecret"
-  # fields: `{
-  #   "EmployeeId": {field: "external_ref", type: "string"},
-  #   "CheckDate": {field: "earning_date", type: "date", format: "%m/%d/%Y"},
-  #   "Amount": {field: "amount", type: "decimal", regexp: "\\$(\\d+\\.?\\d*)"}
-  # }`
+  password: "supersecret",
+  fields: '''{
+    "EmployeeNumber": {"field": "external_ref", "type": "string"},
+    "CheckDate": {"field": "earning_date", "type": "date", "format": "%m/%d/%Y"},
+    "Amount": {"field": "amount", "type": "decimal", "regexp": "\\$(\\d+\\.?\\d*)"}
+  }'''
 )
 
 Employee.create(
@@ -34,12 +34,12 @@ Employee.create(
 
 employer2 = Employer.create(
   name: "BetaCo",
-  password: "supersecret1"
-  # fields: """{
-  #   "employee": {field: "external_ref", type: "string"},
-  #   "earningDate": { field: "earning_date", type: "date", format: "%Y-%m-%d"},
-  #   "netAmount": {field: "amount", type: "decimal"}
-  # }"""
+  password: "supersecret1",
+  fields: '''{
+    "employee": {"field": "external_ref", "type": "string"},
+    "earningDate": { "field": "earning_date", "type": "date", "format": "%Y-%m-%d"},
+    "netAmount": {"field": "amount", "type": "decimal"}
+  }'''
 )
 
 employer2.employees.create(

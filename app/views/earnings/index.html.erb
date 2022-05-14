@@ -1,7 +1,7 @@
 
 <% if user_signed_in? %>
   <%= button_to "Log Out", session_path, method: :delete %>
-          
+    <h4>Logged in as <%= @current_user.name %></h4>      
 <% else %>
   <%= link_to "Log In", new_session_path %>
 <% end %>

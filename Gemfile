@@ -41,6 +41,7 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
+gem "faker", :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 
 # Use Sass to process CSS
 # gem "sassc-rails"
@@ -67,6 +68,8 @@ end
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "rspec-rails"
+  gem "factory_bot_rails"
+  gem "rails-controller-testing"
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
