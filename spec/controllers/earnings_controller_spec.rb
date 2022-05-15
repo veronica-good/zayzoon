@@ -4,18 +4,22 @@ require 'tempfile'
 RSpec.describe EarningsController, type: :controller do
   let(:current_user) { FactoryBot.create(:employer) }
 
-  # describe "#import" do
+  # describe "POST #import" do
+  #   before do
+  #     allow_any_instance_of(EarningsController).to receive(:current_user) { current_user }
+  #   end
+
   #   it "redirects to home page" do
-  #     post(:import, params:{file: { path: '../../test/earnings.csv',
-  #       name: "earnings.csv"}}, current_user.id)
-  #     expect(response).to(redirect_to(root_path))
+  #     file = file_fixture("earnings.csv")
+  #     post import_earnings_path, params: {use_route: 'earnings/', file: file}
+  #     expect(response.status).to be(200)
   #   end
   # end
 
-  # describe "#index" do
-  #   it "renders index template" do
-  #     get :index
-  #     expect(response).to render_template(:index)
-  #   end
-  # end
+  describe "#index" do
+    it "renders index template" do
+      get :index
+      expect(response).to render_template(:index)
+    end
+  end
 end
